@@ -19,8 +19,10 @@
                 <thead>
                     <tr>
                         <th>
-                            <button class="btn btn-primary">
-                                Show Image
+                            //Event Binding
+                            <button class="btn btn-primary"
+                                    (click)='toggleImg()'>
+                                {{showImg ? 'Hide' : 'Show'}} Image
                             </button>
                         </th>
                         <th>Product</th>
@@ -32,7 +34,14 @@
                 </thead>
                 <tbody>
                     <tr *ngFor='let product of products'>
-                        <td>{{product.productId}}</td>
+                        //Property Binding
+                        <td><img *ngIf = 'showImg'
+                            [src] = 'product.imageUrl'
+                            [title] = 'product.productName'
+                            [style.width.px]='imgWidth'
+                            [style.margin.px]='imgMargin'>
+                        </td>
+                        //Interpolation
                         <td>{{product.productName}}</td>
                         <td>{{product.productCode}}</td>
                         <td>{{product.releaseDate}} </td>

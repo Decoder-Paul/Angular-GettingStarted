@@ -5,6 +5,9 @@ import {Component} from '@angular/core';
 })
 export class ProductListComponent {
     pageTitle: string  = 'Produt List!';
+    imgWidth: number = 50;
+    imgMargin: number = 2;
+    showImg: boolean = false;
     products: any[] = [
         {
         'productId': 2,
@@ -27,4 +30,7 @@ export class ProductListComponent {
             'imageUrl': 'http://openclipart.org/image/300px/svg_to_png/73/rejon_Hammer.png'
         }
     ];
+    toggleImg(): void{
+        this.showImg = !this.showImg;
+    }
 }
