@@ -8,6 +8,7 @@ export class ProductListComponent {
     imgWidth: number = 50;
     imgMargin: number = 2;
     showImg: boolean = false;
+    listFilter: string = 'cart';
     products: any[] = [
         {
         'productId': 2,
