@@ -42,10 +42,14 @@ export class ProductListComponent implements OnInit {
             'imageUrl': 'http://openclipart.org/image/300px/svg_to_png/73/rejon_Hammer.png'
         }
     ];
+    constructor(){
+        this.filteredProducts = this.products;
+        this.listFilter = '';
+    }
     performFilter(filterBy: string): IProduct[]{
         filterBy = filterBy.toLocaleLowerCase();
         return this.products.filter((product: IProduct)=>
-            product.productName.toLocaleLowerCase().indexOf(filterBy) ! == -1);
+            product.productName.toLocaleLowerCase().indexOf(filterBy) !== -1);
     }
     toggleImg(): void{
         this.showImg = !this.showImg;
