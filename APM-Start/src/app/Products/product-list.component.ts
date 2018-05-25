@@ -7,10 +7,10 @@ import { IProduct } from './product';
 })
 export class ProductListComponent implements OnInit {
     
-    pageTitle: string  = 'Produt List!';
+    pageTitle: string  = 'Product List!';
     imgWidth: number = 50;
     imgMargin: number = 2;
-    showImg: boolean = false;
+    showImg: boolean = false; 
     _listFilter: string;
     get listFilter(): string {
         return this._listFilter; 
@@ -45,6 +45,9 @@ export class ProductListComponent implements OnInit {
     constructor(){
         this.filteredProducts = this.products;
         this.listFilter = '';
+    }
+    onRatingClicked(message: string): void{
+        this.pageTitle = 'Product List: ' + message;
     }
     performFilter(filterBy: string): IProduct[]{
         filterBy = filterBy.toLocaleLowerCase();
